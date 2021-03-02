@@ -9,7 +9,10 @@ class SanitizerStringFile
 
     public static function exec(string $string)
     {
-        $newstring = strtolower(trim($string));
+
+        $pathinfo = pathinfo($string);
+
+        $newstring = strtolower(trim($pathinfo['filename']));
 
         $search = ['À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì',
             'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ø', 'Ù', 'Ú',
@@ -53,13 +56,13 @@ class SanitizerStringFile
         $replace = ['and', 'pounds', 'dollars'];
         $newstring = str_replace($search, $replace, $newstring);
 
-        $find = [' ', '&', '\r\n', '\n', '+', ',', '//'];
+        $find = [' ', '&', '\r\n', '\n', '+', ',', '/'];
         $newstring = str_replace($find, '-', $newstring);
 
         $find = ['/[^a-z0-9\-<>]/', '/[\-]+/', '/<[^>]*>/'];
         $replace = ['', '_', ''];
         $newstring = preg_replace($find, $replace, $newstring);
 
-        return $newstring;
+        return $newstring . "." . $pathinfo['extension'];
     }
 }

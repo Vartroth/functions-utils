@@ -28,15 +28,4 @@ class SanitizerStringUrl
 
         return $newstring;
     }
-
-    /**
-     * Convert a string into a url safe address.
-     *
-     * @param string $unformatted
-     * @return string
-     */
-    public function formatURL($unformatted)
-    {
-
-    }
 }
