@@ -26,7 +26,7 @@ class FillString
         int $lenght,
         string $string = self::DEFAULT_STRING,
         int $type = self::FILL_RIGHT
-    ) {
+    ): string {
         return str_pad($input, $lenght, $string, $type);
     }
 }
