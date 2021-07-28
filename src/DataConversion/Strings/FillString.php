@@ -4,7 +4,7 @@ declare (strict_types = 1);
 
 namespace Vartroth\Utils\DataConversion\Strings;
 
-class FillString
+final class FillString
 {
 
     const DEFAULT_STRING = " ";

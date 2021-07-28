@@ -30,8 +30,11 @@
         "php-parallel-lint/php-var-dump-check": "~0.4"
     },
     "scripts": {
+        "phpunit":[
+            "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html coverage"
+        ],
         "test": [
-            "./vendor/bin/phpunit --coverage-html coverage",
+            "./vendor/bin/phpunit --coverage-text --colors=never",
             "./vendor/bin/parallel-lint --exclude vendor --exclude index.php .",
             "./vendor/bin/var-dump-check --exclude vendor --exclude index.php ."
         ]

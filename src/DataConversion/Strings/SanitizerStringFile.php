@@ -4,7 +4,7 @@ declare (strict_types = 1);
 
 namespace Vartroth\Utils\DataConversion\Strings;
 
-class SanitizerStringFile
+final class SanitizerStringFile
 {
 
     public static function exec(string $string)
