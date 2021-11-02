@@ -25,8 +25,13 @@ final class FillString
         string $input,
         int $lenght,
         string $string = self::DEFAULT_STRING,
-        int $type = self::FILL_RIGHT
+        int $type = self::FILL_RIGHT,
+        $encoding = "UTF-8"
     ): string {
-        return str_pad($input, $lenght, $string, $type);
+        return str_pad(
+            $input,
+            strlen($input) - mb_strlen($input, $encoding) + $lenght,
+            $string,
+            $type);
     }
 }

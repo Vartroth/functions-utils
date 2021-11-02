@@ -12,6 +12,7 @@ class FillStringTest extends TestCase
      **/
     public function testFillStringExec()
     {
+        $this->assertEquals('Palacio de Congresos Boltaña  ', FillString::exec("Palacio de Congresos Boltaña", 30));
         $this->assertEquals('hello i am adrian   ', FillString::exec("hello i am adrian", 20));
         $this->assertEquals('   hello i am adrian', FillString::exec("hello i am adrian", 20, " ", FillString::FILL_LEFT));
         $this->assertEquals('0000012345678900000', FillString::exec("123456789", 19, "0", FillString::FILL_BOTH));
