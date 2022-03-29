@@ -47,7 +47,7 @@ final class PasswordGenerator
         $random = "";
 
         for ($i = 0; $i < $lenght; $i++) {
-            $random .= $string[rand(0, strlen($string))];
+            $random .= substr($string, rand(0, strlen($string)), 1);
         }
 
         return $random;

@@ -44,6 +44,6 @@ class PasswordGeneratorTest extends TestCase
         $pswMedium = PasswordGenerator::exec(PasswordGenerator::MEDIUM);
 
         $this->assertEquals(PasswordGenerator::DEFAULT_LENGHT, strlen($pswEasy));
-        $this->assertTrue(\is_string($pswMedium));
+        $this->assertTrue(is_string($pswMedium));
     }
 }

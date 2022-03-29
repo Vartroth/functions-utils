@@ -12,12 +12,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Vartroth\\Utils\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Vartroth\\Utils\\Tests\\": "tests/"
+            "Vartroth\\Utils\\": "src/",
+            "PHPTDD\\src\\": "tests/"
         }
     },
     "require": {
@@ -34,7 +30,7 @@
             "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html coverage"
         ],
         "test": [
-            "./vendor/bin/phpunit --coverage-text --colors=never",
+            "./vendor/bin/phpunit --coverage-text",
             "./vendor/bin/parallel-lint --exclude vendor --exclude index.php .",
             "./vendor/bin/var-dump-check --exclude vendor --exclude index.php ."
         ]
